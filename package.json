@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "description": "",
   "bin": {
-    "mvc-cli": "dist/main.js"
+    "mvc-cli": "dist/hello.js"
   },
   "author": "",
   "license": "UNLICENSED",
