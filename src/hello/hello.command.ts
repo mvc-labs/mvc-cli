@@ -6,6 +6,6 @@ import { Command, CommandRunner } from 'nest-commander'
 })
 export class HelloCommand extends CommandRunner {
   async run(inputs: string[], options: Record<string, any>): Promise<void> {
-    console.log('Hello World!')
+    console.log('Hello World!!!!')
   }
 }
