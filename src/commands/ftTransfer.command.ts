@@ -5,8 +5,8 @@ import { getWif } from '../utils'
 import { readFileSync } from 'fs'
 
 @Command({
-  name: 'ftTransfer',
-  arguments: '<tokenName> <address> <amount>',
+  name: 'ft_transfer',
+  arguments: '<token> <address> <amount>',
   options: {},
 })
 export class FtTransferCommand extends CommandRunner {
@@ -14,22 +14,30 @@ export class FtTransferCommand extends CommandRunner {
     const path = require.resolve('./tokenConfig.json')
     const config = JSON.parse(readFileSync(path, 'utf8'))
     try {
-      const [tokenName, address, amount] = inputs // amount is space , you need to tranform to satoshi
-      const { genesis, codehash, exchangeRate } = config.find((d) => d.name === tokenName)
-
-      if (!genesis) {
+      const [token, address, amount] = inputs // amount is space , you need to tranform to satoshi
+      let tokenConfig
+      let finalGenesis = ''
+      if (token.length === 40) {
+        tokenConfig = config.find((d) => d.genesis === token)
+        finalGenesis = token
+      } else {
+        tokenConfig = config.find((d) => d.name === token)
+        finalGenesis = tokenConfig.genesis
+      }
+      console.log('finalgenesis:', finalGenesis)
+      if (finalGenesis === '' || !tokenConfig) {
         console.log("You haven't registered this fungible token!")
         return
       }
       const wif = getWif()
 
       const ft = new FtManager({ purse: wif })
-      console.log(genesis, codehash, exchangeRate, '------')
-      const tokenAmount = new Decimal(amount).mul(Number(exchangeRate)).toNumber().toString()
-      console.log('transfer amount', tokenAmount)
+
+      const tokenAmount = new Decimal(amount).mul(Number(tokenConfig.decimal)).toNumber().toString()
+      console.log('transfer decimal and amount', Number(tokenConfig.decimal), tokenAmount)
       await ft.transfer({
-        codehash,
-        genesis,
+        codehash: tokenConfig.codehash,
+        genesis: tokenConfig.genesis,
         senderWif: wif,
         receivers: [{ address, amount: tokenAmount }],
       })
