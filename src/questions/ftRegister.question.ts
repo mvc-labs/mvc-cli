@@ -28,6 +28,6 @@ export class FtRegisterQuestions {
     name: 'codehash',
   })
   parseCodehash(val: string) {
-    return val
+    return val == '' ? 'a2421f1e90c6048c36745edd44fad682e8644693' : val
   }
 }
