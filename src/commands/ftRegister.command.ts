@@ -1,7 +1,7 @@
 import { Command, CommandRunner, InquirerService } from 'nest-commander'
 import { readFile, writeFile, access } from 'fs'
 import { resolve } from 'path'
-interface TaskBody {
+interface TokenBody {
   name: string
   genesis: string
   decimal: string
@@ -27,8 +27,9 @@ export class FtRegisterCommand extends CommandRunner {
   }
   async run(): Promise<void> {
     try {
-      const answer = await this.inquirer.ask<TaskBody>('ft_questions', undefined)
-      const path = resolve(__dirname) + '/tokenRegister.json'
+      const answer = await this.inquirer.ask<TokenBody>('ft_questions', undefined)
+      const path = resolve('./') + '/tokenRegister.json'
+      console.log('register token to path: ', path)
       access(path, (err) => {
         if (err) {
           writeFile(path, JSON.stringify(ftList), function (err_new) {
@@ -52,7 +53,7 @@ export class FtRegisterCommand extends CommandRunner {
           })
         })
       })
-      // const path = require.resolve('./tokenConfig.json')
+      // const path = require.resolve('./tokenRegister.json')
     } catch (error) {
       console.log('err', error)
     }

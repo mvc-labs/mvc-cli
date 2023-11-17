@@ -1,11 +1,13 @@
 import { Command, CommandRunner } from 'nest-commander'
+import { resolve } from 'path'
 
 @Command({
   name: 'hello',
-  options: {},
 })
 export class HelloCommand extends CommandRunner {
-  async run(inputs: string[], options: Record<string, any>): Promise<void> {
-    console.log('Hello World!')
+  async run(): Promise<void> {
+    const path = resolve(__dirname) + '/account.json'
+    const config = await import(path)
+    console.log({ config })
   }
 }

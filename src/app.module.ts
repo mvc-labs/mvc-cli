@@ -7,6 +7,9 @@ import { GetbalanceCommand } from './commands/getbalance.command'
 import { FtTransferCommand } from './commands/ftTransfer.command'
 import { FtRegisterCommand } from './commands/ftRegister.command'
 import { FtRegisterQuestions } from './questions/ftRegister.question'
+import { InitCommand } from './commands/init.command'
+import { InitQuestions } from './questions/init.question'
+
 @Module({
   imports: [],
   controllers: [AppController],
@@ -18,6 +21,8 @@ import { FtRegisterQuestions } from './questions/ftRegister.question'
     FtTransferCommand,
     FtRegisterCommand,
     FtRegisterQuestions,
+    InitCommand,
+    InitQuestions,
   ],
 })
 export class AppModule {}
