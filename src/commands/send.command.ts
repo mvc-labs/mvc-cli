@@ -6,7 +6,11 @@ import { getWif } from '../utils'
 @Command({
   name: 'send',
   arguments: '<address> <amount>',
-  options: {},
+  description: 'A command for transferring your space.',
+  argsDescription: {
+    address: 'The address you want to transfer your space to',
+    amount: 'The transfer amount for this transaction',
+  },
 })
 export class SendCommand extends CommandRunner {
   async run(inputs: string[]): Promise<void> {

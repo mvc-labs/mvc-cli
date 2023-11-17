@@ -5,7 +5,7 @@ import { getWif } from '../utils'
 
 @Command({
   name: 'getbalance',
-  options: {},
+  description: 'A command for getting the balance of your account',
 })
 export class GetbalanceCommand extends CommandRunner {
   async run(): Promise<void> {

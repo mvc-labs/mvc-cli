@@ -5,9 +5,14 @@ import { getWif } from '../utils'
 import { readFileSync } from 'fs'
 
 @Command({
-  name: 'ft_transfer',
+  name: 'ft-transfer',
+  description: 'A command for the transfer of fungible tokens.',
   arguments: '<token> <address> <amount>',
-  options: {},
+  argsDescription: {
+    token: "The fungible token's name for token, you can also use its gensisi code instead",
+    address: 'The address you want to transfer your token to',
+    amount: 'The transfer amount for this transaction',
+  },
 })
 export class FtTransferCommand extends CommandRunner {
   async run(inputs: string[]): Promise<void> {

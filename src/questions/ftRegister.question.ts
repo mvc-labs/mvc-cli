@@ -17,7 +17,7 @@ export class FtRegisterQuestions {
     return val
   }
   @Question({
-    message: 'What is its exchange rate?',
+    message: 'What is its decimal value?',
     name: 'decimal',
   })
   parseExchangeRate(val: string) {

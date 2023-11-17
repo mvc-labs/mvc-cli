@@ -9,7 +9,8 @@ interface TaskBody {
 }
 
 @Command({
-  name: 'ft_register',
+  name: 'ft-register',
+  description: 'A command for registering a fungible token, just answer the following series of questions.',
 })
 export class FtRegisterCommand extends CommandRunner {
   constructor(private readonly inquirer: InquirerService) {
