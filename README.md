@@ -12,7 +12,7 @@ yarn add @mvc-org/mvc-cli
 
 ### Config your account
 
-At your root project dir, run mvc-cli init and answer the next series of questions, this will generate `account.json` file at your current working directory.
+Open terminal, at your current working directory, run `mvc-cli init` and answer the next series of questions, this will generate `account.json` file at your current working directory.
 
 ```
 // account.json file
@@ -63,7 +63,7 @@ mvc-cli ft-transfer b2d75931958114e48c9927160f80363eae78e2dc 12ecgYPjeZh3mv6izoV
 
 ### register new fungible tokens
 
-At your root project dir, run `mvc-cli ft-register` and answer the next series of questions, this will generate `tokenRegister.json` file at your current working directory.
+Open terminal, At your current working directory, run `mvc-cli ft-register` and answer the next series of questions, this will generate `tokenRegister.json` file at your current working directory.
 
 ```
 // tokenRegister.json
