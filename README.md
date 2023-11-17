@@ -6,7 +6,20 @@ This is a simple CLI tool to operate MVC cli wallet.
 
 ## Installation
 
-yarn add @mvc-org/mvc-cli
+### Prerequisite
+
+You should install Node at your system first. Open your terminal run command `node -v`, if it console log **v18.14**, (18.14 is your node version, it will change depends what version you have installed), this means you have node installed.
+
+If nothing shows, that means you haven't installed Node.
+For that, we recommand you use [nvm](https://github.com/nvm-sh/nvm) to finish this set up.
+
+## Install
+
+With node environment successfully set, you can install our cli tool as follows:
+
+```
+npm install -g @mvc-org/mvc-cli
+```
 
 ## Usage
 
