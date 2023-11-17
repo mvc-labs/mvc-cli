@@ -28,31 +28,33 @@ mvc-cli [command] [options]
 Options:
 
 - -h, --help display help for command
-- -tk, --tokens <tokens...> You can choose what tokens you want to check(Note1:token name should tranform to lowercase, Note2: this option is for `getbalance` command)
+- -tk, --tokens <tokens...> You can choose what tokens you want to check(**Note1**:token name should tranform to lowercase, **Note2**: this option is for `get-ft-balance` and `get-nft-balance` command, **Note3**, for ft token is symbol, for nft token is genesis id)
 
 Commands
 | command | description |
 | :----- | :----- |
-| <div style="width: 150pt"> send \<address> \<amount>| for space transferring |
-| getbalance [options] | for getting space and token balance of your account |
+| <div style="width: 220pt"> send \<address> \<amount>| for space transferring |
+| get-balance | for getting space amount of current account |
+| get-ft-balance -tk, --tokens <tokens...> | for getting fungible token balance of your account |
+| get-nft-collection -tk, --tokens <tokens...> | for getting non-fungible token collection of your account |
 | ft-transfer \<token> \<address> \<amount> | for transferring your fungible token to target address|
 | ft-register | for registering a fungible token, just answer the following series of questions. |
 
 ## Example
 
-#### to get help text for a specific command
+### get help text for a specific command
 
 ```
 mvc-cli send --help
 ```
 
-#### transfer 0.01 space to target address
+### transfer 0.01 space to target address
 
 ```
 mvc-cli send 12ecgYPjeZh3mv6izoVuBSaa1Dxxwv2J1G 0.01
 ```
 
-#### transfer 0.88 MSP ft token to target address
+### transfer 0.88 MSP ft token to target address
 
 ```
 mvc-cli ft-transfer msp 12ecgYPjeZh3mv6izoVuBSaa1Dxxwv2J1G 0.88
@@ -75,6 +77,28 @@ Open terminal, At your current working directory, run `mvc-cli ft-register` and 
     "codehash": "a2421f1e90c6048c36745edd44fad682e8644693"
   },
 ]
+```
+
+### get balance
+
+#### get mvc space
+
+```
+mvc-cli get-balance
+```
+
+#### get ft balance
+
+```
+mvc-cli get-ft-balance  // this will get all ft's balance
+mvc-cli get-ft-balance --tokens msp mc // get specific tokens' balance, msp mc is tokens's symbol(!!remember transfer to lowercase!!)
+```
+
+#### get nft collection
+
+```
+mvc-cli get-nft-collection  // this will get all nft collection
+mvc-cli get-nft-collection --tokens b2d75xxxxxxx  efd75xxxxxxx/ / get specific nfts' information, b2d75xxxxxxx is token's genesis id
 ```
 
 ## Dependencies

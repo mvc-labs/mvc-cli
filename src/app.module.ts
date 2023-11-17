@@ -3,12 +3,14 @@ import { AppController } from './app.controller'
 import { AppService } from './app.service'
 import { HelloCommand } from './commands/hello.command'
 import { SendCommand } from './commands/send.command'
-import { GetbalanceCommand } from './commands/getbalance.command'
+import { GetbalanceCommand } from './commands/getBalance.command'
 import { FtTransferCommand } from './commands/ftTransfer.command'
 import { FtRegisterCommand } from './commands/ftRegister.command'
 import { FtRegisterQuestions } from './questions/ftRegister.question'
 import { InitCommand } from './commands/init.command'
 import { InitQuestions } from './questions/init.question'
+import { GetFtBalanceCommand } from './commands/getFtBalance.command'
+import { GetNftCollectionCommand } from './commands/getNftCollection.command'
 
 @Module({
   imports: [],
@@ -18,6 +20,8 @@ import { InitQuestions } from './questions/init.question'
     HelloCommand,
     SendCommand,
     GetbalanceCommand,
+    GetFtBalanceCommand,
+    GetNftCollectionCommand,
     FtTransferCommand,
     FtRegisterCommand,
     FtRegisterQuestions,
