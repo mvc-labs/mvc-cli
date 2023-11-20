@@ -8,15 +8,6 @@ interface TokenBody {
   codehash: string
 }
 
-const ftList = [
-  {
-    name: 'msp',
-    genesis: 'b2d75931958114e48c9927160f80363eae78e2dc',
-    decimal: '1e8',
-    codehash: 'a2421f1e90c6048c36745edd44fad682e8644693',
-  },
-]
-
 @Command({
   name: 'ft-register',
   description: 'A command for registering a fungible token, just answer the following series of questions.',
@@ -32,10 +23,7 @@ export class FtRegisterCommand extends CommandRunner {
       console.log('register token to path: ', path)
       access(path, (err) => {
         if (err) {
-          writeFile(path, JSON.stringify(ftList), function (err_new) {
-            if (err_new) throw err_new
-            console.log('File <tokenRegister.json> is created')
-          })
+          console.log('File <tokenRegister.json> is not created, Please run mvc-cli ft-usual-register')
         }
         readFile(path, 'utf8', (error, data) => {
           if (error) {

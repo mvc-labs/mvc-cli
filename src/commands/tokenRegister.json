@@ -6,9 +6,27 @@
     "codehash": "a2421f1e90c6048c36745edd44fad682e8644693"
   },
   {
-    "name": "ss",
-    "genesis": "sds",
-    "decimal": "sdf",
+    "name": "usdt",
+    "genesis": "94c2ae3fdbf95a4fb0d788c818cf5fcc7a9aa66a",
+    "decimal": "1e8",
+    "codehash": "a2421f1e90c6048c36745edd44fad682e8644693"
+  },
+  {
+    "name": "sc",
+    "genesis": "185b4c8fb97a133f1587411b449d30d87ce7d155",
+    "decimal": "1e8",
+    "codehash": "a2421f1e90c6048c36745edd44fad682e8644693"
+  },
+  {
+    "name": "mc",
+    "genesis": "07e4c5a9f866164108de005be81d40ccbd2e964c",
+    "decimal": "1e8",
+    "codehash": "a2421f1e90c6048c36745edd44fad682e8644693"
+  },
+  {
+    "name": "vemsp",
+    "genesis": "fad7b10812fa76718127e084bb71cdb87853261c",
+    "decimal": "1e8",
     "codehash": "a2421f1e90c6048c36745edd44fad682e8644693"
   }
 ]

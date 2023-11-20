@@ -11,6 +11,8 @@ import { InitCommand } from './commands/init.command'
 import { InitQuestions } from './questions/init.question'
 import { GetFtBalanceCommand } from './commands/getFtBalance.command'
 import { GetNftCollectionCommand } from './commands/getNftCollection.command'
+import { GetAddressCommand } from './commands/getAddress.command'
+import { FtUsualRegisterCommand } from './commands/ftUsualRegister.command'
 
 @Module({
   imports: [],
@@ -19,9 +21,11 @@ import { GetNftCollectionCommand } from './commands/getNftCollection.command'
     AppService,
     HelloCommand,
     SendCommand,
+    GetAddressCommand,
     GetbalanceCommand,
     GetFtBalanceCommand,
     GetNftCollectionCommand,
+    FtUsualRegisterCommand,
     FtTransferCommand,
     FtRegisterCommand,
     FtRegisterQuestions,

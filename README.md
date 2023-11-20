@@ -23,7 +23,9 @@ npm install -g @mvc-org/mvc-cli
 
 ## Usage
 
-### Config your account
+### Step by Step Basic Config(Must Do!!!)
+
+#### Step1: Config your account
 
 Open terminal, at your current working directory, run `mvc-cli init` and answer the next series of questions, this will generate `account.json` file at your current working directory.
 
@@ -32,6 +34,23 @@ Open terminal, at your current working directory, run `mvc-cli init` and answer 
 MEMONIC="abc edf"
 ACCOUNTPATH="m/44'/10001'/0'/0/0"
 NETWORK=mainnet
+```
+
+#### Step2: Register usual fungible tokens
+
+Open terminal, at your current working directory, run `mvc-cli ft-usual-register` , this will generate `tokenRegister.json` file at your current working directory.
+
+```
+// tokenRegister.json file
+[
+  {
+    "name": "msp",
+    "genesis": "b2d75931958114e48c9927160f80363eae78e2dc",
+    "decimal": "1e8",
+    "codehash": "a2421f1e90c6048c36745edd44fad682e8644693"
+  },
+  ...
+]
 ```
 
 ### Usage
@@ -48,10 +67,12 @@ Commands
 | :----- | :----- |
 | <div style="width: 220pt"> send \<address> \<amount>| for space transferring |
 | get-balance | for getting space amount of current account |
+| get-address | for getting address of current account |
 | get-ft-balance -tk, --tokens <tokens...> | for getting fungible token balance of your account |
 | get-nft-collection -tk, --tokens <tokens...> | for getting non-fungible token collection of your account |
 | ft-transfer \<token> \<address> \<amount> | for transferring your fungible token to target address|
-| ft-register | for registering a fungible token, just answer the following series of questions. |
+| ft-usual-register | this is a must-do command. |
+| ft-register | for registering a new fungible token, just answer the following series of questions. |
 
 ## Example
 
