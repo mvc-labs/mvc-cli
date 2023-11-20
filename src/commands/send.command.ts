@@ -20,7 +20,10 @@ export class SendCommand extends CommandRunner {
 
     const currentWallet = new Wallet(wif, API_NET.MAIN, 1)
     // console.log(new Decimal(amount).mul(10 ** 8).toNumber())
-    await currentWallet.send(address, new Decimal(amount).mul(10 ** 8).toNumber())
-    console.log('sending mvc space success!')
+    const { txId } = await currentWallet.send(address, new Decimal(amount).mul(10 ** 8).toNumber())
+
+    const url = `https://www.mvcscan.com/tx/${txId}`
+    console.log(`sending mvc space success! txid: ${txId}`)
+    console.log(`You can browse this transaction at ${url}`)
   }
 }

@@ -18,6 +18,8 @@ import { resolve } from 'path'
 export class FtTransferCommand extends CommandRunner {
   async run(inputs: string[]): Promise<void> {
     const path = resolve('./') + '/tokenRegister.json'
+    // const dev_path = resolve(__dirname) + '/tokenRegister.json'
+    // console.log('path', path )
     const config = JSON.parse(readFileSync(path, 'utf8'))
     try {
       const [token, address, amount] = inputs // amount is space , you need to tranform to satoshi
@@ -41,14 +43,15 @@ export class FtTransferCommand extends CommandRunner {
 
       const tokenAmount = new Decimal(amount).mul(Number(tokenRegister.decimal)).toNumber().toString()
       console.log('transfer decimal and amount', Number(tokenRegister.decimal), tokenAmount)
-      await ft.transfer({
+      const { txid } = await ft.transfer({
         codehash: tokenRegister.codehash,
         genesis: tokenRegister.genesis,
         senderWif: wif,
         receivers: [{ address, amount: tokenAmount }],
       })
-
-      console.log('sending ft success!')
+      const url = `https://www.mvcscan.com/tx/${txid}`
+      console.log(`sending ft success! txid: ${txid}`)
+      console.log(`You can browse this transaction at ${url}`)
     } catch (error) {
       console.log('err', error)
     }
