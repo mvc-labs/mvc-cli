@@ -35,7 +35,7 @@ export function getAddress(): string {
   return deriveMvcPrivateKey(config.memonic, config.accountPath, config.network).toAddress(config.network).toString()
 }
 
-export function getApiTarget(): string {
+export function getApiHost(): string {
   // const config = await () => import('')
   const path = resolve('./') + '/cli-config.json'
   access(path, (err) => {
@@ -45,5 +45,5 @@ export function getApiTarget(): string {
     }
   })
   const config = JSON.parse(readFileSync(path, 'utf8'))
-  return config.apiTarget
+  return config.apiHost
 }

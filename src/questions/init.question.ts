@@ -1,4 +1,4 @@
-import { Question, QuestionSet, WhenFor } from 'nest-commander'
+import { Question, QuestionSet } from 'nest-commander'
 
 @QuestionSet({ name: 'init_questions' })
 export class InitQuestions {
@@ -24,19 +24,19 @@ export class InitQuestions {
     return val === '' ? 'mainnet' : val
   }
   @Question({
-    message: 'Which api target are you going to use?',
-    name: 'apiTarget',
+    message: 'Which api host are you going to use?',
+    name: 'apiHost',
     type: 'list',
-    choices: ['mvcapi', 'cyber3', 'custom your local service'],
+    choices: ['mvcapi', 'cyber3', 'custom your local service(example: localhost:8000)'],
   })
   parseApiTarget(val: string) {
     return val
   }
   @Question({
-    message: 'Please custom your local service',
+    message: 'Please custom your local api host',
     name: 'customApi',
     when: (answers) => {
-      return answers.apiTarget === 'custom your local service'
+      return answers.apiHost === 'custom your local service(example: localhost:8000)'
     },
   })
   parseCustomApi(val: string) {

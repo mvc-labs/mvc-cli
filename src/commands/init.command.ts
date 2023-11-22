@@ -6,7 +6,7 @@ interface InitBody {
   memonic: string
   accountPath: string
   network: string
-  apiTarget: 'mvcapi' | 'cyber3' | 'custom your local service'
+  apiHost: 'mvcapi' | 'cyber3' | 'custom your local service(example: localhost:8000)'
   customApi?: string
 }
 

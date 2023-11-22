@@ -1,7 +1,7 @@
 import { Command, CommandRunner, Option } from 'nest-commander'
 import { API_NET, Api, API_TARGET } from 'meta-contract'
 import Decimal from 'decimal.js-light'
-import { getAddress, getApiTarget } from '../utils'
+import { getAddress, getApiHost } from '../utils'
 
 @Command({
   name: 'get-ft-balance',
@@ -11,11 +11,11 @@ export class GetFtBalanceCommand extends CommandRunner {
   async run(_, options: Record<string, any>): Promise<void> {
     try {
       const tokens = options.tokens
-      const apiTargetUser = getApiTarget()
-      const isCustomApi = !['mvcapi', 'cyber3'].includes(apiTargetUser)
-      const apiTarget = apiTargetUser === 'mvcapi' ? API_TARGET.MVC : API_TARGET.CYBER3
+      const apiHostUser = getApiHost()
+      const isCustomApi = !['mvcapi', 'cyber3'].includes(apiHostUser)
+      const apiHost = apiHostUser === 'mvcapi' ? API_TARGET.MVC : API_TARGET.CYBER3
 
-      const api = isCustomApi ? new Api(API_NET.MAIN, apiTarget, apiTargetUser) : new Api(API_NET.MAIN, apiTarget)
+      const api = isCustomApi ? new Api(API_NET.MAIN, apiHost, apiHostUser) : new Api(API_NET.MAIN, apiHost)
 
       const ft_res = (await api.getFungibleTokenSummary(getAddress()))
         .filter((d) => (!tokens ? true : tokens.includes(d.symbol.toLowerCase())))

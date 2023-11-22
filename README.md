@@ -8,7 +8,7 @@ This is a simple CLI tool to operate MVC cli wallet.
 
 ### Prerequisite
 
-You should install Node at your system first. Open your terminal run command `node -v`, if it console log **v18.14**, (18.14 is your node version, it will change depends what version you have installed), this means you have node installed.
+You should install Node at your system first. Open your terminal run command `node -v`, if it console log **v18.14**, (18.14 is your node version, it will change depends on what version you have installed), this means you have node installed.
 
 If nothing shows, that means you haven't installed Node.
 For that, we recommand you use [nvm](https://github.com/nvm-sh/nvm) to finish this set up.
@@ -35,7 +35,7 @@ Open terminal, at your current working directory, run `mvc-cli init` and answer 
   "memonic": "abc edf",
   "accountPath": "m/44'/10001'/0'/0/0",
   "network": "mainnet",
-  "apiTarget": "cyber3"
+  "apiHost": "localhost:8000"
 }
 ```
 

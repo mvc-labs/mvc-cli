@@ -1,6 +1,6 @@
 {
   "name": "@mvc-org/mvc-cli",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "",
   "bin": {
     "mvc-cli": "dist/main.js"
