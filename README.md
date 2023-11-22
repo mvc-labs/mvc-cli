@@ -27,13 +27,16 @@ npm install -g @mvc-org/mvc-cli
 
 #### Step1: Config your account
 
-Open terminal, at your current working directory, run `mvc-cli init` and answer the next series of questions, this will generate `account.json` file at your current working directory.
+Open terminal, at your current working directory, run `mvc-cli init` and answer the next series of questions, this will generate `cli-config.json` file at your current working directory.
 
 ```
-// account.json file
-MEMONIC="abc edf"
-ACCOUNTPATH="m/44'/10001'/0'/0/0"
-NETWORK=mainnet
+// cli-config.json file
+{
+  "memonic": "abc edf",
+  "accountPath": "m/44'/10001'/0'/0/0",
+  "network": "mainnet",
+  "apiTarget": "cyber3"
+}
 ```
 
 #### Step2: Register usual fungible tokens

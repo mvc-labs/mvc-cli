@@ -6,7 +6,7 @@ import { resolve } from 'path'
 })
 export class HelloCommand extends CommandRunner {
   async run(): Promise<void> {
-    const path = resolve(__dirname) + '/account.json'
+    const path = resolve(__dirname) + '/cli-config.json'
     const config = await import(path)
     console.log({ config })
   }

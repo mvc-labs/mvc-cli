@@ -6,6 +6,8 @@ interface InitBody {
   memonic: string
   accountPath: string
   network: string
+  apiTarget: 'mvcapi' | 'cyber3' | 'custom your local service'
+  customApi?: string
 }
 
 @Command({
@@ -19,13 +21,14 @@ export class InitCommand extends CommandRunner {
   async run(): Promise<void> {
     try {
       const answer = await this.inquirer.ask<InitBody>('init_questions', undefined)
-      const path = resolve('./') + '/account.json'
+      console.log('Your answer is ', answer)
+      const path = resolve('./') + '/cli-config.json'
       writeFile(path, JSON.stringify(answer, null, 2), (err) => {
         if (err) {
-          console.log('Failed to write wallet account config to file')
+          console.log('Failed to write cli config to file')
           return
         }
-        console.log('Updated wallet account config file successfully')
+        console.log('Updated cli config file successfully')
       })
     } catch (error) {
       console.log('err', error)
