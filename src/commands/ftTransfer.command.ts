@@ -32,7 +32,7 @@ export class FtTransferCommand extends CommandRunner {
         tokenRegister = config.find((d) => d.name === token)
         finalGenesis = tokenRegister.genesis
       }
-      console.log('finalgenesis:', finalGenesis)
+      // console.log('finalgenesis:', finalGenesis)
       if (finalGenesis === '' || !tokenRegister) {
         console.log("You haven't registered this fungible token!")
         return
@@ -42,7 +42,7 @@ export class FtTransferCommand extends CommandRunner {
       const ft = new FtManager({ purse: wif })
 
       const tokenAmount = new Decimal(amount).mul(Number(tokenRegister.decimal)).toNumber().toString()
-      console.log('transfer decimal and amount', Number(tokenRegister.decimal), tokenAmount)
+      // console.log('transfer decimal and amount', Number(tokenRegister.decimal), tokenAmount)
       const { txid } = await ft.transfer({
         codehash: tokenRegister.codehash,
         genesis: tokenRegister.genesis,
