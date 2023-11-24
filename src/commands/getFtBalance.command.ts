@@ -21,7 +21,8 @@ export class GetFtBalanceCommand extends CommandRunner {
         .filter((d) => (!tokens ? true : tokens.includes(d.symbol.toLowerCase())))
         .map((d) => ({
           symbol: d.symbol.toLowerCase(),
-          amount: new Decimal(d.balance).div(10 ** d.decimal).toNumber(),
+          confirmed_amount: new Decimal(d.balance).div(10 ** d.decimal).toNumber(),
+          unconfirmed_amount: new Decimal(d.pendingBalance).div(10 ** d.decimal).toNumber(),
         }))
       console.log('The balance of your fungible tokens is as follows:')
       console.table(ft_res)

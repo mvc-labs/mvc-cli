@@ -7,6 +7,11 @@ export class InitQuestions {
     name: 'memonic',
   })
   parseMemonic(val: string) {
+    if (val.split(' ').length < 12) {
+      throw Error(
+        'Please enter the mnemonic phrase in the correct format, which length is at least 12 and separated by spaces.'
+      )
+    }
     return val
   }
   @Question({
