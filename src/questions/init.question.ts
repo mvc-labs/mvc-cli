@@ -7,16 +7,16 @@ export class InitQuestions {
     message: 'What is the memonic value of your account?(Hit enter to generate a brand new memonic value)',
     name: 'memonic',
   })
-  parseMemonic(val: string) {
+  async parseMemonic(val: string) {
     if (val === '') {
-      return mvc.Mnemonic.fromRandom.toString()
-    }
-    if (val.split(' ').length < 12) {
+      return (await mvc.Mnemonic.fromRandom()).toString()
+    } else if (val.split(' ').length < 12) {
       throw Error(
         'Please enter the mnemonic phrase in the correct format, which length is at least 12 and separated by spaces.'
       )
+    } else {
+      return val
     }
-    return val
   }
   @Question({
     message: 'What is the path of your account?(Hit enter to use default value)',
