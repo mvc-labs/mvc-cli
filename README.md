@@ -8,14 +8,13 @@ This is a simple CLI tool to operate MVC cli wallet.
 
 ### Prerequisite
 
-You should install Node at your system first. Open your terminal run command `node -v`, if it console log **v18.14**, (18.14 is your node version, it will change depends on what version you have installed), this means you have node installed.
-
-If nothing shows, that means you haven't installed Node.
-For that, we recommand you use [nvm](https://github.com/nvm-sh/nvm) to finish this set up.
+You need to install Node on your computer first. Open your terminal and run the command `node -v`. If the console prints 'v18.14' or a similar version number, it indicates that Node.js has been successfully installed on your computer. The exact version may vary depending on the specific Node version you have installed.
+If nothing shows, it means you haven't installed Node.
+We recommand using [nvm](https://github.com/nvm-sh/nvm) to finish this setup.
 
 ## Install
 
-With node environment successfully set, you can install our cli tool as follows:
+With **Node** environment successfully set, you can install our cli tool as follows:
 
 ```
 npm install -g @mvc-org/mvc-cli
@@ -27,7 +26,7 @@ npm install -g @mvc-org/mvc-cli
 
 #### Step1: Config your account
 
-Open terminal, at your current working directory, run `mvc-cli init` and answer the next series of questions, this will generate `cli-config.json` file at your current working directory.
+Open the terminal at your current working directory and run `mvc-cli init` and answer the next series of questions, this will generate `cli-config.json` file at your current working directory.
 
 ```
 // cli-config.json file
@@ -102,7 +101,7 @@ mvc-cli ft-transfer b2d75931958114e48c9927160f80363eae78e2dc 12ecgYPjeZh3mv6izoV
 
 ### register new fungible tokens
 
-Open terminal, At your current working directory, run `mvc-cli ft-register` and answer the next series of questions, this will generate `tokenRegister.json` file at your current working directory.
+Open the terminal at your current working directory, then run `mvc-cli ft-register` and answer the next series of questions, this will generate `tokenRegister.json` file at your current working directory.
 
 ```
 // tokenRegister.json
