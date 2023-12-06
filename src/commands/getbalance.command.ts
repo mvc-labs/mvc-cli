@@ -1,7 +1,7 @@
 import { Command, CommandRunner } from 'nest-commander'
-import { Wallet, API_NET, API_TARGET, Api } from 'meta-contract'
+import { API_NET, API_TARGET, Api } from 'meta-contract'
 import Decimal from 'decimal.js-light'
-import { getAddress, getApiHost, getWif } from '../utils'
+import { getAddress, getApiHost } from '../utils'
 
 @Command({
   name: 'get-balance',

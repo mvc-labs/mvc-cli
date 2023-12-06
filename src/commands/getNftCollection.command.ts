@@ -8,20 +8,21 @@ import { getAddress } from '../utils'
 })
 export class GetNftCollectionCommand extends CommandRunner {
   async run(_, options: Record<string, any>): Promise<void> {
-    try {
-      const tokens = options.tokens
+    console.log('coming soon...')
+    // try {
+    //   const tokens = options.tokens
 
-      const api = new Api(API_NET.MAIN, API_TARGET.MVC)
-      // api.authorize()
-      const nft_res = (await api.getNonFungibleTokenSummary(getAddress())).filter((d) =>
-        !tokens ? true : tokens.includes(d.genesis)
-      )
-      console.log(nft_res)
-      // console.log('The collection of your non-fungible tokens is as follows:')
-      // console.table(nft_res)
-    } catch (error) {
-      console.log(error)
-    }
+    //   const api = new Api(API_NET.MAIN, API_TARGET.MVC)
+    //   // api.authorize()
+    //   const nft_res = (await api.getNonFungibleTokenSummary(getAddress())).filter((d) =>
+    //     !tokens ? true : tokens.includes(d.genesis)
+    //   )
+    //   console.log(nft_res)
+    //   // console.log('The collection of your non-fungible tokens is as follows:')
+    //   // console.table(nft_res)
+    // } catch (error) {
+    //   console.log(error)
+    // }
   }
   @Option({
     flags: '-tk, --tokens <tokens...>',

@@ -55,6 +55,8 @@ Open terminal, at your current working directory, run `mvc-cli ft-usual-register
 ]
 ```
 
+> **Note**: If you are using a Windows system, running this command may encounter a display format error prompt. As a result, the result file may not be generated correctly. You can manually input and create the JSON file using the format provided above.
+
 ### Usage
 
 mvc-cli [command] [options]
@@ -114,6 +116,8 @@ Open the terminal at your current working directory, then run `mvc-cli ft-regist
   },
 ]
 ```
+
+> **Note**: If you are using a Windows system, running this command may encounter a display format error prompt. As a result, the result file may not be generated correctly. You can manually input and create the JSON file using the format provided above.
 
 ### get balance
 

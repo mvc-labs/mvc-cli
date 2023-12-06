@@ -16,7 +16,7 @@ const ftList = [
     codehash: 'a2421f1e90c6048c36745edd44fad682e8644693',
   },
   {
-    name: 'sc',
+    name: 'show',
     genesis: '185b4c8fb97a133f1587411b449d30d87ce7d155',
     decimal: '1e8',
     codehash: 'a2421f1e90c6048c36745edd44fad682e8644693',
